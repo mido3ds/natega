@@ -7,6 +7,10 @@ to install:
 
 `pip install beautifulsoup4`
 
+to run:
+
+`cd natega` or on windows type `dir natega`
+
 `python main.py`
 
 
