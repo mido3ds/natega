@@ -5,6 +5,8 @@ to install:
 
 `git clone https://www.github.com/mido3ds/natega.git`
 
+`pip install beautifulsoup4`
+
 `python main.py`
 
 
