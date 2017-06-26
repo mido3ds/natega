@@ -13,3 +13,8 @@ def is_marked(page):
 natega_appeared = is_marked(get_page())
 
 ##########################################################################
+
+print(
+    'Appeared' if natega_appeared
+    else 'Not Yet'
+)
