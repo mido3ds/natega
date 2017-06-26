@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
+from random import randrange, random
+import webbrowser
 
 
 def get_page():
@@ -14,7 +16,27 @@ natega_appeared = is_marked(get_page())
 
 ##########################################################################
 
-print(
-    'Appeared' if natega_appeared
-    else 'Not Yet'
-)
+
+def get_rand_location():  # -> Float, Float
+    latitude = randrange(-90, 90) + random()
+    longitude = randrange(-180, 180) + random()
+
+    return longitude, latitude
+
+
+def get_google_maps_link(lat, long, zoom=8):
+    return 'https://www.google.com/maps/preview/@{latitude},{longitude},{zoomlevel}z'.format(
+        latitude=lat,
+        longitude=long,
+        zoomlevel=zoom
+    )
+##########################################################################
+
+if natega_appeared:
+    long, lat = get_rand_location()
+    link = get_google_maps_link(lat, long, 8)
+
+    print('Appeared')
+    webbrowser.open(link)
+else:
+    print('Not Yet')
