@@ -5,11 +5,11 @@ from random import randrange, random
 import webbrowser
 
 
-def get_page():
+def get_page():  # -> String
     return urlopen(url='http://www.results.eng.cu.edu.eg/').read()
 
 
-def is_marked(page):
+def is_marked(page):  # String -> Bool
     return BeautifulSoup(page, 'html.parser').find(id='td44').find('a') is not None
 
 natega_appeared = is_marked(get_page())
@@ -24,7 +24,7 @@ def get_rand_location():  # -> Float, Float
     return longitude, latitude
 
 
-def get_google_maps_link(lat, long, zoom=8):
+def get_google_maps_link(lat, long, zoom=8):  # Int, Int, Int -> String
     return 'https://www.google.com/maps/preview/@{latitude},{longitude},{zoomlevel}z'.format(
         latitude=lat,
         longitude=long,
