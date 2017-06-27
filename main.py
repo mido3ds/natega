@@ -10,7 +10,7 @@ def get_page():  # -> String
 
 
 def is_marked(page):  # String -> Bool
-    return BeautifulSoup(page, 'html.parser').find(id='td44').find('a') is not None
+    return BeautifulSoup(page, 'html.parser').find(id='td45').find('a') is not None
 
 natega_appeared = is_marked(get_page())
 
